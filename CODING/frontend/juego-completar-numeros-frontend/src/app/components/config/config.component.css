@@ -1,0 +1,161 @@
+/* Contenedor de Configuración */
+.config-container {
+  max-width: 900px;
+  width: 90%;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  margin: 40px auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.config-container:hover {
+  transform: scale(1.03);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Título Principal */
+.welcome-message {
+  font-size: 1.6em;
+  color: #34495e;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.intro-message {
+  font-size: 1em;
+  color: #6b7a8f;
+  margin-bottom: 20px;
+}
+
+/* Título del Formulario */
+.form-title {
+  font-size: 1.5em;
+  color: #34495e;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+/* Grupo de Entrada */
+.input-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* Etiquetas */
+.input-group label {
+  font-size: 1em;
+  color: #6b7a8f;
+  font-weight: bold;
+}
+
+/* Campos de Entrada */
+.form-input {
+  width: 100%;
+  padding: 15px;
+  margin-top: 10px;
+  border: 1px solid #d1d9e6;
+  border-radius: 10px;
+  background-color: #f9fbfc;
+  font-size: 1em;
+  color: #34495e;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input:focus {
+  border-color: #5dade2;
+  outline: none;
+  box-shadow: 0 0 10px rgba(93, 173, 226, 0.2);
+}
+
+/* Botones */
+.btn {
+  padding: 15px 0;
+  margin: 15px 0;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  width: 100%;
+  color: #ffffff;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-green {
+  background-color: #4cd3c2;
+}
+
+.btn-green:hover {
+  background-color: #3bb9ab;
+}
+
+/* Responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+  .config-container {
+    padding: 30px;
+    margin: 20px auto;
+  }
+
+  .welcome-message {
+    font-size: 1.4em;
+  }
+
+  .form-title {
+    font-size: 1.3em;
+  }
+
+  .form-input {
+    padding: 12px;
+  }
+
+  .btn {
+    padding: 12px 0;
+    font-size: 1em;
+  }
+}
+
+/* Responsivo para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .config-container {
+    padding: 20px;
+  }
+
+  .welcome-message {
+    font-size: 1.2em;
+  }
+
+  .form-input {
+    padding: 10px;
+  }
+
+  .btn {
+    padding: 10px 0;
+    font-size: 0.9em;
+  }
+}
+.btn-blue {
+  padding: 12px 20px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #5dade2;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.btn-blue:hover {
+  background-color: #4a9ed4;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}

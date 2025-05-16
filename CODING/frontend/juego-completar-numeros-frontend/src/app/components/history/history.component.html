@@ -1,0 +1,35 @@
+<div class="app-container">
+  <header class="app-header">
+    <h1>Juego de Completar Números</h1>
+    <p>Aplicación para ayudar a pacientes en ejercicios cognitivos</p>
+  </header>
+<div class="history-container">
+  <h2 class="history-title">Historial</h2>
+
+  <div class="search-group">
+    <input
+      type="text"
+      [(ngModel)]="searchName"
+      (keyup)="onSearchChange()"
+      class="search-input"
+      placeholder="Buscar por nombre del paciente"
+    />
+  </div>
+  
+
+  <div id="history-log" class="history-log">
+    <div *ngFor="let history of filteredHistoryLog" class="history-entry">
+      <p><strong>Paciente:</strong> {{ history.nombrePaciente }} - <strong>Terapeuta:</strong> {{ history.nombreTerapeuta }}</p>
+      <p><strong>Observación:</strong> {{ history.observacion }} - <strong>Tiempo:</strong> {{ history.tiempo }} - <strong>Errores:</strong> {{ history.errores }} - <strong>Aciertos:</strong> {{ history.aciertos }}</p>
+      <hr class="divider" />
+    </div>
+    <p *ngIf="historyLog.length === 0" class="no-results">No se encontraron resultados.</p>
+  </div>
+
+  <!-- Botón Volver -->
+  <button class="btn btn-back" (click)="goToLogin()">Volver</button>
+</div>
+<footer class="app-footer">
+  <p>&copy; 2025 Juego Cognitivo. Todos los derechos reservados.</p>
+  <P>Desarrollado por Vertex Quality</P>
+</footer>

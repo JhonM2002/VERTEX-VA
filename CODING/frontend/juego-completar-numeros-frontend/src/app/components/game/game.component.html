@@ -1,0 +1,40 @@
+<body>
+  <div class="motivational-container">
+    <p class="motivational-message">
+      ¡Vamos {{ patientName }}! Estás haciendo un gran trabajo. ¡Tú puedes lograrlo!
+    </p>
+  </div>
+<div class="game-container">
+  <h2 class="game-title">Encuentra los Números Faltantes</h2>
+  <h4>Los números a encontrar están desde {{ actualRangeStart }} hasta {{ actualRangeEnd }}</h4>
+
+  <div class="number-list">
+    <p *ngFor="let number of sequence" class="number-item">
+      {{ number !== '' ? number : ' ' }}
+    </p>
+  </div>
+
+  <span class="missing-title">Ingrese los números faltantes:</span>
+
+  <div class="missing-inputs">
+    <input
+      *ngFor="let input of userInputs; let i = index"
+      type="number"
+      [(ngModel)]="userInputs[i].value"
+      [disabled]="input.disabled"
+      [ngClass]="{
+        'input-correct': input.correct && feedbackMessage !== '',
+        'input-incorrect': !input.correct && feedbackMessage !== '' && input.value !== null
+      }"
+      class="input-missing-number"
+    />
+  </div>
+
+  <div class="motivational-message">{{ motivationalMessage }}</div>
+
+  <button class="btn btn-validate" (click)="validateInputs()">Validar</button>
+  <button class="btn btn-end" (click)="endAttempt()">Terminar Intento</button>
+
+  <div class="feedback-message" [ngClass]="feedbackClass">{{ feedbackMessage }}</div>
+</div>
+</body>

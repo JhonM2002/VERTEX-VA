@@ -1,0 +1,39 @@
+<div class="result-container">
+  <h2 class="title">Resultado del Juego</h2>
+  <div >
+    <p class="attempt-message">{{ attemptMessage }}</p>
+    <p><strong>Nombre del Paciente:</strong> {{ patientName }}</p>
+    <p><strong>Nombre del Terapeuta:</strong> {{ therapistName }}</p>
+  </div>
+  
+  <!-- Observaciones del jugador -->
+  <textarea
+    id="observation"
+      class="observation-input"
+      [(ngModel)]="observation"
+      placeholder="Escribe tus observaciones aquí..."
+  ></textarea>
+
+  <!-- Mostrar el tiempo tomado en segundos -->
+  <div class="time-section">
+    <p class="time-text">Tiempo: <span id="round-time">{{ timeTaken }}</span> segundos</p>
+  </div>
+  <!-- Mostrar el conteo de aciertos -->
+
+  <!-- Conteo de errores individuales por número -->
+  <div id="errors-section">
+    <p class="total-errors">Aciertos: {{ correctCount }}</p>
+    <p class="total-errors">Errores totales: {{ totalErrors }}</p>
+  </div>
+
+  <!-- Botones de acción -->
+  <button class="btn btn-green" (click)="saveResult()">Guardar</button>
+  <p></p>
+  <button class="btn btn-blue" (click)="retryGame()">Volver a intentar</button>
+  <p></p>
+  <button class="btn btn-purple" (click)="newGame()">Jugar otra partida</button>
+  <p></p>
+  <button class="btn btn-history" (click)="goToHistory()">Ir al Historial</button>
+  <p></p>
+  <button class="btn btn-gray" (click)="goToMain()">Inicio</button>
+</div>

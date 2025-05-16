@@ -1,0 +1,48 @@
+<div class="app-container">
+  <header class="app-header">
+    <h1>Juego de Completar Números</h1>
+    <p>Aplicación para ayudar a pacientes en ejercicios cognitivos</p>
+  </header>
+<div class="login-container">
+  <h2>Bienvenido</h2>
+  <h4>Por favor seleccione el nombre del terapeuta y del paciente</h4>
+
+  <!-- Selección de Terapeuta -->
+  <div class="input-group">
+    <label for="therapist-cedula">Seleccione el Terapeuta:</label>
+    <select
+      id="therapist-cedula"
+      class="form-select"
+      [(ngModel)]="selectedTherapistCedula"
+      required
+    >
+      <option value="" disabled selected>Seleccione un terapeuta</option>
+      <option *ngFor="let therapist of therapists" [value]="therapist.cedula">
+        {{ therapist.nombre }}
+      </option>
+    </select>
+  </div>
+
+  <!-- Selección de Paciente -->
+  <div class="input-group">
+    <label for="patient-cedula">Seleccione el Paciente:</label>
+    <select
+      id="patient-cedula"
+      class="form-select"
+      [(ngModel)]="selectedPatientCedula"
+      required
+    >
+      <option value="" disabled selected>Seleccione un paciente</option>
+      <option *ngFor="let patient of patients" [value]="patient.cedula">
+        {{ patient.nombre }}
+      </option>
+    </select>
+  </div>
+
+  <button class="btn btn-green" (click)="goToConfiguration()">Continuar</button>
+  <button class="btn btn-blue" (click)="goToHistory()">Historial</button>
+</div>
+<footer class="app-footer">
+  <p>&copy; 2025 Juego Cognitivo. Todos los derechos reservados.</p>
+  <P>Desarrollado por Vertex Quality</P>
+</footer>
